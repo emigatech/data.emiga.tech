@@ -1,0 +1,19 @@
+{
+  "name": "data.emiga.tech",
+  "version": "1.0.0",
+  "description": "Public data for COVID-19",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emigatech/data.emiga.tech.git"
+  },
+  "author": "Emin Muhammadi <muemin17631@sabah.edu.az> (https://github.com/eminmuhammadi)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/emigatech/data.emiga.tech/issues"
+  },
+  "homepage": "https://github.com/emigatech/data.emiga.tech#readme"
+}
