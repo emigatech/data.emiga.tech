@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import uuid from "uuid";
 import Helmet from "react-helmet";
 import LoadingSkeleton from "../Loading/LoadingSkeleton.js";
-import CountryTableExtension from '../Table/CountryTableExtension.js';
+import { JsonToTable } from "react-json-to-table";
 
 class CountryTable extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class CountryTable extends Component {
   }
   componentDidMount () {
 
-    fetch('https://api.emiga.tech/https://corona.lmao.ninja/countries/'+this.props.country)
+    fetch('https://api.emiga.tech/https://corona.lmao.ninja/historical/'+this.props.country)
       .then(res => res.json())
       .then(
         (result) => {
@@ -58,45 +58,25 @@ class CountryTable extends Component {
     }
 
     else {
-      if (data.country) {
+      if (data.standardizedCountryName) {
         return(
-          <div>
-            <h1 className="container"><b>{data.country}</b></h1>
-            <Helmet>
-              <title>{data.country} | Covid-19 Data - emiga.tech</title>
-              <meta name="description" content={data.country + " | Covid-19 Data by emiga.tech"}/>
-            </Helmet>
-            <div className="table-responsive border">
-              <table className="table">
-                <thead>
+          <div class="table-responsive border">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Cases</th>
+                  <th scope="col">Deaths</th>
+                  <th scope="col">Recovered</th>
+                </tr>
+              </thead>
+              <tbody>
                   <tr>
-                    <th>Countries</th>
-                    <th>Cases</th>
-                    <th>Today cases</th>
-                    <th>Deaths</th>
-                    <th>Today deaths</th>
-                    <th>Recovered</th>
-                    <th>Active</th>
-                    <th>Critical</th>
-                    <th>Cases per million</th>
+                    <td><JsonToTable json={data.timeline.cases}/></td>
+                    <td><JsonToTable json={data.timeline.deaths}/></td>
+                    <td><JsonToTable json={data.timeline.recovered}/></td>
                   </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><a href={"/?q="+data.country}><b>{data.country}</b></a></td>
-                    <td>{data.cases}</td>
-                    <td className="bg-warning"><b>{data.todayCases}</b></td>
-                    <td>{data.deaths}</td>
-                    <td className="bg-warning"><b>{data.todayDeaths}</b></td>
-                    <td className="bg-success"><b>{data.recovered}</b></td>
-                    <td>{data.active}</td>
-                    <td>{data.critical}</td>
-                    <td>{data.casesPerOneMillion}</td>
-                  </tr>
-               </tbody>
-              </table>
-            </div>
-            <CountryTableExtension country={this.props.country}/>
+                </tbody>
+            </table>
           </div>
         );
       }
