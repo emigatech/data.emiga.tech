@@ -3,6 +3,8 @@ import uuid from "uuid";
 import Helmet from "react-helmet";
 import LoadingSkeleton from "../Loading/LoadingSkeleton.js";
 import { JsonToTable } from "react-json-to-table";
+import $ from "jquery";
+
 
 class CountryTable extends Component {
   constructor(props) {
@@ -60,8 +62,8 @@ class CountryTable extends Component {
     else {
       if (data.standardizedCountryName) {
         return(
-          <div class="table-responsive border">
-            <table class="table">
+          <div className="table-responsive border">
+            <table className="table">
               <thead>
                 <tr>
                   <th scope="col">Cases</th>
