@@ -1,0 +1,9 @@
+@import "~bootstrap/scss/bootstrap";
+@import "normalize";
+
+a {
+  color: #000;
+  &:hover{
+    color: #000;
+  }
+}
