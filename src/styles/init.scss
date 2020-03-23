@@ -1,0 +1,88 @@
+$primary: #003333;
+$secondary: #f0ffff;
+$supporter: #00cccc;
+$helper: #009999;
+
+@media only screen and (max-width: 319px) {
+  body, html {
+    display: none;
+  }
+}
+
+.bg-white {
+  background-color: #000;
+}
+.border, table *{
+  border-color: $primary !important;
+}
+body * {
+  color:$primary !important;
+}
+.table thead th {
+  white-space: nowrap;
+}
+
+::-moz-selection, html::-moz-selection, body::-moz-selection {
+  background: $primary !important;
+  color: $secondary !important;
+}
+
+::selection , html::selection , body::selection {
+  background: $primary !important;
+  color: $secondary !important;
+}
+
+textarea:hover, input:hover, textarea:active, input:active, textarea:focus, input:focus {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+button {
+  &:focus, &:active, &:hover {
+    outline: 0px !important;
+    -webkit-appearance: none;
+    box-shadow: none !important;
+  }
+}
+
+label:focus {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+.btn {
+  &:active, &.active {
+    outline: 0px !important;
+    -webkit-appearance: none;
+    box-shadow: none !important;
+  }
+}
+
+html {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: $secondary;
+  color:$primary !important;
+  font-family: 'Roboto', sans-serif !important;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    background-color: transparent !important;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent !important;
+    background-color: transparent !important;
+    border-left: 1px solid $primary;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+  }
+}

@@ -28,7 +28,7 @@ class HomePage extends Component {
               <img src={Logo} className="img-fluid" height={64} width={64} alt="emiga.tech logo"/>
             </a>
           </div>
-          <div className="col-md-12 pt-5 pb-2">
+          <div className="col-md-12 pt-5">
             {
               query['q'] ?
                 (<CountryTable country={query['q']}/>)

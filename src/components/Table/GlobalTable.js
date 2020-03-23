@@ -58,7 +58,7 @@ class GlobalTable extends Component {
     else {
       if (data && data.length) {
         return(
-          <div className="table-responsive border">
+          <div className="table-responsive border bg-white">
             <table className="table">
               <thead>
                 <tr>

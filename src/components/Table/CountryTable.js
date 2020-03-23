@@ -61,12 +61,15 @@ class CountryTable extends Component {
       if (data.country) {
         return(
           <div>
-            <h1 className="container"><b>{data.country}</b></h1>
+            <h1 className="container">
+                <img src={data.countryInfo.flag} className="img-fluid pr-3" width="64"/>
+                <b>{data.country}</b>
+            </h1>
             <Helmet>
               <title>{data.country} | Covid-19 Data - emiga.tech</title>
               <meta name="description" content={data.country + " | Covid-19 Data by emiga.tech"}/>
             </Helmet>
-            <div className="table-responsive border">
+            <div className="table-responsive border bg-white">
               <table className="table">
                 <thead>
                   <tr>
