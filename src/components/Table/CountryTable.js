@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import uuid from "uuid";
 import Helmet from "react-helmet";
 import LoadingSkeleton from "../Loading/LoadingSkeleton.js";
 import CountryTableExtension from '../Table/CountryTableExtension.js';
