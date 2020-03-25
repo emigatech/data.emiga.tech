@@ -21,6 +21,14 @@ body * {
 .table thead th {
   white-space: nowrap;
 }
+.table thead {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+.table {
+  margin-bottom: 0px !important;
+}
 
 ::-moz-selection, html::-moz-selection, body::-moz-selection {
   background: $primary !important;

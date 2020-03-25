@@ -3,6 +3,7 @@ import uuid from "uuid";
 import Helmet from "react-helmet";
 import LoadingSkeleton from "../Loading/LoadingSkeleton.js";
 import { JsonToTable } from "react-json-to-table";
+import Moment from 'react-moment';
 import $ from "jquery";
 
 
@@ -17,7 +18,7 @@ class CountryTable extends Component {
   }
   componentDidMount () {
 
-    fetch('https://api.emiga.tech/https://corona.lmao.ninja/historical/'+this.props.country)
+    fetch('https://api.emiga.tech/https://pomber.github.io/covid19/timeseries.json')
       .then(res => res.json())
       .then(
         (result) => {
@@ -60,26 +61,30 @@ class CountryTable extends Component {
     }
 
     else {
-      if (data.standardizedCountryName) {
+      if (data[this.props.country]) {
         return(
-          <div className="table-responsive border bg-white">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th scope="col">Cases</th>
-                  <th scope="col">Deaths</th>
-                  <th scope="col">Recovered</th>
-                </tr>
-              </thead>
-              <tbody>
+            <div className="table-responsive border bg-white">
+              <table className="table">
+                <thead>
                   <tr>
-                    <td><JsonToTable json={data.timeline.cases}/></td>
-                    <td><JsonToTable json={data.timeline.deaths}/></td>
-                    <td><JsonToTable json={data.timeline.recovered}/></td>
+                    <th>Time</th>
+                    <th>Cases</th>
+                    <th>Deaths</th>
+                    <th>Recovered</th>
                   </tr>
-                </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {data[this.props.country].reverse().map((data,index) => (
+                    <tr key={uuid()}>
+                      <td><b><Moment format="DD MMMM, YYYY">{data.date}</Moment></b></td>
+                      <td>{data.confirmed}</td>
+                      <td>{data.deaths}</td>
+                      <td>{data.recovered}</td>
+                    </tr>
+                  ))}
+               </tbody>
+              </table>
+            </div>
         );
       }
 

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import GlobalTable from '../components/Table/GlobalTable.js';
 import CountryTable from '../components/Table/CountryTable.js'
+import Footer from '../components/Footer/Footer.js';
 import Logo from '../emiga-logo.png';
 
 const query = (function(a) {
@@ -37,6 +38,7 @@ class HomePage extends Component {
             }
           </div>
         </div>
+        <Footer/>
       </div>
     );
   }
