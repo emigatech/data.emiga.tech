@@ -66,6 +66,18 @@ class CountryTable extends Component {
          case 'Iran, Islamic Republic of':
           var country = 'Iran';
           break;
+        case 'Macedonia, the former Yugoslav Republic of':
+          var country = 'North Macedonia';
+          break;
+        case 'Moldova, Republic of':
+          var country = 'Moldova';
+          break;
+        case 'Venezuela, Bolivarian Republic of':
+          var country = 'Venezuela';
+          break;
+        case 'Tanzania, United Republic of':
+          var country = 'Tanzania';
+          break;
         default:
           var country = this.props.country;
       }
