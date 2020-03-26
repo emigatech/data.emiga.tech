@@ -10,24 +10,42 @@ $helper: #009999;
 }
 
 .bg-white {
-  background-color: #000;
+  background-color: #fff;
 }
+
+body * {
+  color: $primary !important;
+}
+
 .border, table *{
   border-color: $primary !important;
 }
-body * {
-  color:$primary !important;
+
+.table > thead > * {
+  color: $helper;
 }
+
 .table thead th {
   white-space: nowrap;
 }
+
 .table thead {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
+  background-color: $helper !important;
 }
+
 .table {
   margin-bottom: 0px !important;
+}
+
+.yt-wrapper_align_right{
+  display: none !important;
+}
+
+tr > td {
+  white-space: nowrap;
 }
 
 ::-moz-selection, html::-moz-selection, body::-moz-selection {

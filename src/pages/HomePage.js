@@ -5,6 +5,7 @@ import CountryTable from '../components/Table/CountryTable.js'
 import Total from '../components/Table/Total.js'
 import Footer from '../components/Footer/Footer.js';
 import Logo from '../emiga-logo.png';
+import $ from "jquery";
 
 const query = (function(a) {
   if (a == "") return {};
@@ -20,16 +21,13 @@ const query = (function(a) {
   return b;
 })(window.location.search.substr(1).split('&'));
 
+$("#emiga-header").css("display", "block");
+
 class HomePage extends Component {
   render() {
     return(
       <div className="container">
         <div className="row">
-          <div className="container pt-5 text-center">
-            <a href="/" title="Go to main">
-              <img src={Logo} className="img-fluid" height={64} width={64} alt="emiga.tech logo"/>
-            </a>
-          </div>
           <div className="col-md-12 pt-5">
             {
               query['q'] ?

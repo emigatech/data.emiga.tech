@@ -53,22 +53,24 @@ class Total extends Component {
     else {
       if (data) {
         return(
-          <div className="container">
+          <div className="pt-2 pb-2">
             <h1>
-              <b>Total Statistics</b>
+              <b>Worldwide statistics <sup><abbr title="Table of Worldwide statistics">#</abbr></sup></b>
             </h1>
-            <div className="row pt-2 pb-2">
-              <div className="col-sm-12 col-md-4 bg-white shadow-sm border">
-                <h4 className="pt-2">Cases</h4>
-                <div>{data.cases}</div>
-              </div>
-              <div className="col-sm-12 col-md-4 bg-white shadow-sm border">
-                <h4 className="pt-2">Deaths</h4>
-                <div>{data.deaths}</div>
-              </div>
-              <div className="col-sm-12 col-md-4 bg-white shadow-sm border">
-                <h4 className="pt-2">Recovered</h4>
-                <div>{data.recovered}</div>
+            <div className="container">
+              <div className="row pt-2 pb-2">
+                <div className="col-sm-12 col-md-4 bg-white shadow-sm border">
+                  <h4 className="pt-2">Cases</h4>
+                  <div><b>{data.cases}</b></div>
+                </div>
+                <div className="col-sm-12 col-md-4 bg-white shadow-sm border">
+                  <h4 className="pt-2">Deaths</h4>
+                  <div><b>{data.deaths}</b></div>
+                </div>
+                <div className="col-sm-12 col-md-4 bg-white shadow-sm border">
+                  <h4 className="pt-2">Recovered</h4>
+                  <div><b>{data.recovered}</b></div>
+                </div>
               </div>
             </div>
           </div>

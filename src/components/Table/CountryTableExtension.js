@@ -72,14 +72,16 @@ class CountryTable extends Component {
 
       if (data[country]) {
         return(
-            <div className="table-responsive border bg-white">
+          <div className="pt-2 pb-2">
+            <h1>Updates for {this.props.country}</h1>
+            <div className="table-responsive border bg-white shadow-sm">
               <table className="table">
                 <thead>
                   <tr>
-                    <th>Time</th>
-                    <th>Cases</th>
-                    <th>Deaths</th>
-                    <th>Recovered</th>
+                    <th>Time <sup><abbr title="The current date for case">#</abbr></sup></th>
+                    <th>Cases <sup><abbr title="Daily number of cases">#</abbr></sup></th>
+                    <th>Deaths <sup><abbr title="Daily number of deaths">#</abbr></sup></th>
+                    <th>Recovered <sup><abbr title="Daily number of recovered">#</abbr></sup></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -94,6 +96,7 @@ class CountryTable extends Component {
                </tbody>
               </table>
             </div>
+          </div>
         );
       }
 

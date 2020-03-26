@@ -60,43 +60,45 @@ class CountryTable extends Component {
       if (data.country) {
         return(
           <div>
-            <h1 className="container">
-                <img alt={data.country} src={data.countryInfo.flag} className="img-fluid pr-3" width="64"/>
-                <b>{data.country}</b>
-            </h1>
-            <Helmet>
-              <title>{data.country} | Covid-19 Data - emiga.tech</title>
-              <meta name="description" content={data.country + " | Covid-19 Data by emiga.tech"}/>
-            </Helmet>
-            <div className="table-responsive border bg-white">
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th>Countries</th>
-                    <th>Cases</th>
-                    <th>Today cases</th>
-                    <th>Deaths</th>
-                    <th>Today deaths</th>
-                    <th>Recovered</th>
-                    <th>Active</th>
-                    <th>Critical</th>
-                    <th>Cases per million</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><a href={"/?q="+data.country}><b>{data.country}</b></a></td>
-                    <td>{data.cases}</td>
-                    <td className="bg-warning"><b>{data.todayCases}</b></td>
-                    <td>{data.deaths}</td>
-                    <td className="bg-warning"><b>{data.todayDeaths}</b></td>
-                    <td className="bg-success"><b>{data.recovered}</b></td>
-                    <td>{data.active}</td>
-                    <td>{data.critical}</td>
-                    <td>{data.casesPerOneMillion}</td>
-                  </tr>
-               </tbody>
-              </table>
+            <div className="pt-2 pb-2">
+              <h1 className="container">
+                  <img alt={data.country} src={data.countryInfo.flag} className="img-fluid pr-3" width="64"/>
+                  <b>{data.country}</b>
+              </h1>
+              <Helmet>
+                <title>{data.country} | Covid-19 Data - emiga.tech</title>
+                <meta name="description" content={data.country + " | Covid-19 Data by emiga.tech"}/>
+              </Helmet>
+              <div className="table-responsive border bg-white shadow-sm">
+                <table className="table">
+                  <thead>
+                    <tr>
+                      <th>Countries <sup><abbr title="Countries link">#</abbr></sup></th>
+                      <th>Cases <sup><abbr title="Cases for COVID-19">#</abbr></sup></th>
+                      <th>Today cases <sup><abbr title="Today cases for COVID-19">#</abbr></sup></th>
+                      <th>Deaths <sup><abbr title="Deaths for COVID-19">#</abbr></sup></th>
+                      <th>Today deaths <sup><abbr title="Today deaths for COVID-19">#</abbr></sup></th>
+                      <th>Recovered <sup><abbr title="Recovered for COVID-19">#</abbr></sup></th>
+                      <th>Active <sup><abbr title="Active cases">#</abbr></sup></th>
+                      <th>Critical <sup><abbr title="Critical cases">#</abbr></sup></th>
+                      <th>Cases per million <sup><abbr title="Fatality rate">#</abbr></sup></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><a href={"/?q="+data.country}><b>{data.country}</b></a></td>
+                      <td>{data.cases}</td>
+                      <td className="bg-warning"><b>{data.todayCases}</b></td>
+                      <td>{data.deaths}</td>
+                      <td className="bg-warning"><b>{data.todayDeaths}</b></td>
+                      <td className="bg-success"><b>{data.recovered}</b></td>
+                      <td>{data.active}</td>
+                      <td>{data.critical}</td>
+                      <td>{data.casesPerOneMillion}</td>
+                    </tr>
+                 </tbody>
+                </table>
+              </div>
             </div>
             <CountryTableExtension country={this.props.country}/>
           </div>

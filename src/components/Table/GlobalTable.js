@@ -58,23 +58,23 @@ class GlobalTable extends Component {
     else {
       if (data && data.length) {
         return(
-          <div>
-            <h1 class="container">
-              <b>List Of Countries</b>
+          <div className="pt-2 pb-2">
+            <h1>
+              <b>List of countries <sup><abbr title="Table of countries statistics">#</abbr></sup></b>
             </h1>
-            <div className="table-responsive border bg-white">
+            <div className="table-responsive border bg-white shadow-sm">
               <table className="table">
                 <thead>
                   <tr>
-                    <th>Countries</th>
-                    <th>Cases</th>
-                    <th>Today cases</th>
-                    <th>Deaths</th>
-                    <th>Today deaths</th>
-                    <th>Recovered</th>
-                    <th>Active</th>
-                    <th>Critical</th>
-                    <th>Cases per million</th>
+                    <th>Countries <sup><abbr title="Countries link">#</abbr></sup></th>
+                    <th>Cases <sup><abbr title="Cases for COVID-19">#</abbr></sup></th>
+                    <th>Today cases <sup><abbr title="Today cases for COVID-19">#</abbr></sup></th>
+                    <th>Deaths <sup><abbr title="Deaths for COVID-19">#</abbr></sup></th>
+                    <th>Today deaths <sup><abbr title="Today deaths for COVID-19">#</abbr></sup></th>
+                    <th>Recovered <sup><abbr title="Recovered for COVID-19">#</abbr></sup></th>
+                    <th>Active <sup><abbr title="Active cases">#</abbr></sup></th>
+                    <th>Critical <sup><abbr title="Critical cases">#</abbr></sup></th>
+                    <th>Cases per million <sup><abbr title="Fatality rate">#</abbr></sup></th>
                   </tr>
                 </thead>
                 <tbody>
