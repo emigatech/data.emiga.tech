@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import GlobalTable from '../components/Table/GlobalTable.js';
 import CountryTable from '../components/Table/CountryTable.js'
+import Total from '../components/Table/Total.js'
 import Footer from '../components/Footer/Footer.js';
 import Logo from '../emiga-logo.png';
 
@@ -34,7 +35,12 @@ class HomePage extends Component {
               query['q'] ?
                 (<CountryTable country={query['q']}/>)
                   :
-                (<GlobalTable/>)
+                (
+                  <div>
+                    <Total/>
+                    <GlobalTable/>
+                  </div>
+                )
             }
           </div>
         </div>

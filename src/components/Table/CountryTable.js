@@ -61,7 +61,7 @@ class CountryTable extends Component {
         return(
           <div>
             <h1 className="container">
-                <img src={data.countryInfo.flag} className="img-fluid pr-3" width="64"/>
+                <img alt={data.country} src={data.countryInfo.flag} className="img-fluid pr-3" width="64"/>
                 <b>{data.country}</b>
             </h1>
             <Helmet>

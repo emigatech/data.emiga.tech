@@ -58,37 +58,42 @@ class GlobalTable extends Component {
     else {
       if (data && data.length) {
         return(
-          <div className="table-responsive border bg-white">
-            <table className="table">
-              <thead>
-                <tr>
-                  <th>Countries</th>
-                  <th>Cases</th>
-                  <th>Today cases</th>
-                  <th>Deaths</th>
-                  <th>Today deaths</th>
-                  <th>Recovered</th>
-                  <th>Active</th>
-                  <th>Critical</th>
-                  <th>Cases per million</th>
-                </tr>
-              </thead>
-              <tbody>
-              {data.map((data,index) => (
-                <tr key={uuid()}>
-                  <td><a href={"/?q="+data.country}><b>{data.country}</b></a></td>
-                  <td>{data.cases}</td>
-                  <td className="bg-warning"><b>{data.todayCases}</b></td>
-                  <td>{data.deaths}</td>
-                  <td className="bg-warning"><b>{data.todayDeaths}</b></td>
-                  <td className="bg-success"><b>{data.recovered}</b></td>
-                  <td>{data.active}</td>
-                  <td>{data.critical}</td>
-                  <td>{data.casesPerOneMillion}</td>
-                </tr>
-              ))}
-             </tbody>
-            </table>
+          <div>
+            <h1 class="container">
+              <b>List Of Countries</b>
+            </h1>
+            <div className="table-responsive border bg-white">
+              <table className="table">
+                <thead>
+                  <tr>
+                    <th>Countries</th>
+                    <th>Cases</th>
+                    <th>Today cases</th>
+                    <th>Deaths</th>
+                    <th>Today deaths</th>
+                    <th>Recovered</th>
+                    <th>Active</th>
+                    <th>Critical</th>
+                    <th>Cases per million</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {data.map((data,index) => (
+                  <tr key={uuid()}>
+                    <td><a href={"/?q="+data.country}><b>{data.country}</b></a></td>
+                    <td>{data.cases}</td>
+                    <td className="bg-warning"><b>{data.todayCases}</b></td>
+                    <td>{data.deaths}</td>
+                    <td className="bg-warning"><b>{data.todayDeaths}</b></td>
+                    <td className="bg-success"><b>{data.recovered}</b></td>
+                    <td>{data.active}</td>
+                    <td>{data.critical}</td>
+                    <td>{data.casesPerOneMillion}</td>
+                  </tr>
+                ))}
+               </tbody>
+              </table>
+            </div>
           </div>
         );
       }

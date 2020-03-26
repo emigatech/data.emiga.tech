@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import uuid from "uuid";
-import Helmet from "react-helmet";
 import LoadingSkeleton from "../Loading/LoadingSkeleton.js";
-import { JsonToTable } from "react-json-to-table";
 import Moment from 'react-moment';
-import $ from "jquery";
 
 
 class CountryTable extends Component {
@@ -56,7 +53,24 @@ class CountryTable extends Component {
     }
 
     else {
-      if (data[this.props.country]) {
+
+      var country = this.props.country;
+
+      /**
+        Fixing data implementations
+      */
+      switch (country) {
+        case 'USA':
+          var country = 'US';
+          break;
+         case 'Iran, Islamic Republic of':
+          var country = 'Iran';
+          break;
+        default:
+          var country = this.props.country;
+      }
+
+      if (data[country]) {
         return(
             <div className="table-responsive border bg-white">
               <table className="table">
@@ -69,7 +83,7 @@ class CountryTable extends Component {
                   </tr>
                 </thead>
                 <tbody>
-                  {data[this.props.country].reverse().map((data,index) => (
+                  {data[country].reverse().map((data,index) => (
                     <tr key={uuid()}>
                       <td><b><Moment format="DD MMMM, YYYY">{data.date}</Moment></b></td>
                       <td>{data.confirmed}</td>
