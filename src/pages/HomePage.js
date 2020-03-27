@@ -5,7 +5,6 @@ import CountryTable from '../components/Table/CountryTable.js'
 import Total from '../components/Table/Total.js'
 import Footer from '../components/Footer/Footer.js';
 import Logo from '../emiga-logo.png';
-import $ from "jquery";
 
 const query = (function(a) {
   if (a == "") return {};
@@ -21,12 +20,25 @@ const query = (function(a) {
   return b;
 })(window.location.search.substr(1).split('&'));
 
-$("#emiga-header").css("display", "block");
+const script = document.createElement("script");
+script.src = "https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=en&widgetTheme=light&autoMode=true";
+script.async = true;
+document.body.appendChild(script);
 
 class HomePage extends Component {
+
   render() {
     return(
-      <div className="container">
+      <div className="container pt-5 pb-5">
+        <div className="text-center">
+          <a href="/" title="Go to main">
+            <img src={Logo} className="img-fluid" height="64" width="64" alt="emiga.tech logo"/>
+          </a>
+          <h1 className="pt-1 pb-1">COVID-19 CORONAVIRUS PANDEMIC</h1>
+          <div className="pt-1 pb-1">
+            <div id="ytWidget"></div>
+          </div>
+        </div>
         <div className="row">
           <div className="col-md-12 pt-5">
             {

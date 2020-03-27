@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import Logo from '../emiga-logo.png';
-import $ from "jquery";
-
-
-$("#emiga-header").css("display", "none");
 
 class Error extends Component {
 
