@@ -60,15 +60,20 @@ class CountryTable extends Component {
       if (data.country) {
         return(
           <div>
+            <Helmet>
+              <title>Coronavirus (Covid-19) {data.country} statistics by emiga.tech</title>
+              <meta name="description" content={"Coronavirus (Covid-19) "+data.country+ "statistics by emiga.tech"} />
+              <meta property="og:url" content={window.location.href} />
+              <meta property="og:title" content={"Coronavirus (Covid-19) "+data.country+" statistics by emiga.tech"} />
+              <meta property="og:description" content={"Coronavirus (Covid-19) "+data.country+ "statistics by emiga.tech"} />
+              <meta name="twitter:title" content={"Coronavirus (Covid-19) "+data.country+" statistics by emiga.tech"} />
+              <meta name="twitter:description" content={"Coronavirus (Covid-19) "+data.country+ "statistics by emiga.tech"} />
+            </Helmet>
             <div className="pt-2 pb-2">
               <h1 className="container">
                   <img alt={data.country} src={data.countryInfo.flag} className="img-fluid pr-3" width="64"/>
                   <b>{data.country}</b>
               </h1>
-              <Helmet>
-                <title>{data.country} | Covid-19 Data - emiga.tech</title>
-                <meta name="description" content={data.country + " | Covid-19 Data by emiga.tech"}/>
-              </Helmet>
               <div className="table-responsive border bg-white shadow-sm">
                 <table className="table">
                   <thead>
