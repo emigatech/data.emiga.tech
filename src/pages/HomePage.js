@@ -21,7 +21,7 @@ const query = (function(a) {
 })(window.location.search.substr(1).split('&'));
 
 const script = document.createElement("script");
-script.src = "https://translate.yandex.net/website-widget/v1/widget.js?widgetId=ytWidget&pageLang=en&widgetTheme=light&autoMode=true";
+script.src = "https://translate.yandex.net/website-widget/v1/widget.js?widgetId=emiga_translate&pageLang=en&widgetTheme=light&autoMode=false";
 script.async = true;
 document.body.appendChild(script);
 
@@ -36,7 +36,7 @@ class HomePage extends Component {
           </a>
           <h1 className="pt-1 pb-1">COVID-19 CORONAVIRUS PANDEMIC</h1>
           <div className="pt-1 pb-1">
-            <div id="ytWidget"></div>
+            <div id="emiga_translate"></div>
           </div>
         </div>
         <div className="row">
