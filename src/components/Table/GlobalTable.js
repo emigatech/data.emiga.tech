@@ -13,7 +13,7 @@ class GlobalTable extends Component {
   }
   componentDidMount () {
 
-    fetch('https://api.emiga.tech/https://corona.lmao.ninja/countries')
+    fetch('https://api.emiga.tech/https://corona.lmao.ninja/v2/countries')
       .then(res => res.json())
       .then(
         (result) => {
