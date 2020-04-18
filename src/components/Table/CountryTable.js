@@ -14,7 +14,7 @@ class CountryTable extends Component {
   }
   componentDidMount () {
 
-    fetch('https://api.emiga.tech/https://corona.lmao.ninja/countries/'+this.props.country)
+    fetch('https://api.emiga.tech/https://corona.lmao.ninja/v2/countries/'+this.props.country+'?strict=true')
       .then(res => res.json())
       .then(
         (result) => {
