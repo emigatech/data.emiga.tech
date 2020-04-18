@@ -13,7 +13,7 @@ class Total extends Component {
   }
   componentDidMount () {
 
-    fetch('https://api.emiga.tech/https://corona.lmao.ninja/all')
+    fetch('https://api.emiga.tech/https://corona.lmao.ninja/v2/all')
       .then(res => res.json())
       .then(
         (result) => {
